@@ -1,128 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>India Code Search Embed</title>
+  <meta http-equiv="refresh" content="3; URL='https://www.indiacode.nic.in/handle/123456789/1362/simple-search'" />
+  <title>India Code Search</title>
   <style>
-    /* Basic Reset */
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
+    /* Center content vertically and horizontally */
     body, html {
       height: 100%;
+      margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      flex-direction: column;
-      background: #f0f4f8;
-      color: #333;
-    }
-    header {
-      background: linear-gradient(90deg, #004080, #0073e6);
+      background: linear-gradient(135deg, #004080, #0073e6);
       color: white;
-      padding: 1.2rem 1rem;
-      text-align: center;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-      user-select: none;
-    }
-    header h1 {
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      margin-bottom: 0.2rem;
-      text-transform: uppercase;
-    }
-    header p {
-      font-weight: 400;
-      font-size: 0.9rem;
-      opacity: 0.8;
-    }
-
-    /* Container to hold iframe and loader */
-    #container {
-      flex-grow: 1;
-      position: relative;
-      width: 100%;
-      min-height: 600px;
-      background: white;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      border-radius: 6px;
-      overflow: hidden;
-      margin: 1rem auto;
-      max-width: 1200px;
-    }
-
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block;
-      opacity: 0;
-      transition: opacity 0.5s ease-in-out;
-    }
-
-    /* Loader styles */
-    #loader {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      font-size: 1rem;
-      color: #004080;
+      flex-direction: column;
+      text-align: center;
+      padding: 1rem;
+    }
+    h1 {
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 3px rgba(0,0,0,0.3);
+    }
+    a {
+      color: #ffd54f;
       font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: border-bottom 0.3s ease;
     }
-
-    /* Dot loading animation */
-    .dot {
-      width: 12px;
-      height: 12px;
-      background: #0073e6;
+    a:hover, a:focus {
+      border-bottom: 2px solid #ffd54f;
+    }
+    /* Simple spinner animation */
+    .spinner {
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-top: 4px solid #ffd54f;
       border-radius: 50%;
-      animation: bounce 1.4s infinite ease-in-out both;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin-bottom: 1.5rem;
     }
-    .dot:nth-child(1) { animation-delay: 0s; }
-    .dot:nth-child(2) { animation-delay: 0.2s; }
-    .dot:nth-child(3) { animation-delay: 0.4s; }
-
-    @keyframes bounce {
-      0%, 80%, 100% {
-        transform: scale(0);
-      }
-      40% {
-        transform: scale(1);
-      }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>India Code Search</h1>
-    <p>Embedded search interface from https://www.indiacode.nic.in/</p>
-  </header>
-
-  <div id="container">
-    <div id="loader">
-      Loading
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </div>
-    <iframe 
-      src="https://www.indiacode.nic.in/handle/123456789/1362/simple-search" 
-      title="India Code Search" 
-      onload="iframeLoaded()"
-    ></iframe>
-  </div>
-
-  <script>
-    function iframeLoaded() {
-      const iframe = document.querySelector('iframe');
-      const loader = document.getElementById('loader');
-      loader.style.display = 'none';
-      iframe.style.opacity = '1';
-    }
-  </script>
+  <div class="spinner"></div>
+  <h1>Redirecting to India Code Search...</h1>
+  <p>If you are not redirected automatically, <a href="https://www.indiacode.nic.in/handle/123456789/1362/simple-search">click here</a>.</p>
 </body>
 </html>
